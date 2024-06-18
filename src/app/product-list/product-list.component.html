@@ -1,0 +1,8 @@
+<img [src]="product.imageUrl" alt="sddf">
+<p>Name: {{product.name}}</p>
+<p>Price: {{product.price}}</p>
+<p>Color: {{product.color}} </p>
+<p>Discounted price: ${{getDiscount()}}</p>
+<button [disabled]="!product.inStock" (click)="clicked()" class="bg-red-500 p-4 cursor-pointer">BuyNow</button>
+
+

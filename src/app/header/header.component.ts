@@ -7,4 +7,14 @@ import { Component } from "@angular/core";
 })
 export class HeaderComponent {
     title = 'Logo'
+    searchQuery = ''
+
+    onSearchInput(event:Event):void {
+        const inputElement = event.target as HTMLInputElement
+        this.searchQuery = inputElement.value
+    }
+    
+    onSearch():void {
+        console.log(this.searchQuery)
+    }
 }
