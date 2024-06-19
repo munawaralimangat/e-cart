@@ -12,21 +12,5 @@
     <div class="flex space-x-4 flex-col">
       <top-menu></top-menu>
     </div>
-    <div class="search-container">
-      <div class="flex justify-center items-center">
-        <input
-          type="text"
-          (input)="onSearchInput($event)"
-          placeholder="Search products..."
-          class="border border-gray-300 rounded-lg p-2 w-2/3 md:w-1/2"
-        />
-        <button
-        (click)="onSearch()"
-          class="ml-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        >
-          Search
-        </button>
-      </div>
-    </div>
   </div>
 </header>

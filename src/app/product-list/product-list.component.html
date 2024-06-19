@@ -1,8 +1,15 @@
-<img [src]="product.imageUrl" alt="sddf">
-<p>Name: {{product.name}}</p>
-<p>Price: {{product.price}}</p>
-<p>Color: {{product.color}} </p>
-<p>Discounted price: ${{getDiscount()}}</p>
-<button [disabled]="!product.inStock" (click)="clicked()" class="bg-red-500 p-4 cursor-pointer">BuyNow</button>
-
+<div class="p-12">
+    <!-- <img [src]="product.imageUrl" alt="sddf">
+    <p>Name: {{product.name}}</p>
+    <p>Price: {{product.price}}</p>
+    <p>Color: {{product.color}} </p>
+    <p>Discounted price: ${{getDiscount()}}</p>
+    <button [disabled]="!product.inStock" class="bg-red-500 p-4 cursor-pointer">BuyNow</button>
+    <button class="m-4" (click)="increment()">+
+    </button>
+    <span class="p-4">{{addToCart}}</span>
+    <button class="m-4" (click)="decrement()">-
+    </button> -->
+   <app-search></app-search>
+</div>
 
