@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  templateUrl: './container.component.html',
+  styleUrls: ['./container.component.css']
 })
-export class ProductListComponent implements OnInit {
+export class ContainerComponent implements OnInit {
 
   constructor() { }
   addToCart:number = 0

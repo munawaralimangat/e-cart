@@ -1,5 +1,4 @@
 <nav class="hidden md:flex space-x-4">
-    <a href="#" class="text-gray-600 hover:text-gray-800">Home</a>
-    <a href="#" class="text-gray-600 hover:text-gray-800">About</a>
-    <a href="#" class="text-gray-600 hover:text-gray-800">Products</a>
+
+    <a href="#" *ngFor="let item of topMenu">{{item}}</a>
   </nav>

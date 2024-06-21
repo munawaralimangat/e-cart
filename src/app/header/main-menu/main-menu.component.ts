@@ -12,4 +12,6 @@ export class MainMenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  topMenu = ['Home','About','Products','Services']
+
 }
