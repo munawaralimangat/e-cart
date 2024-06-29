@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'product-list',
+  selector: 'app-container',
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.css']
 })
@@ -21,6 +21,7 @@ export class ContainerComponent implements OnInit {
     return this.product.price - this.product.discountedPrice
   }
   ngOnInit(): void {
+    console.log('component mounted')
   }
 
   increment(){
