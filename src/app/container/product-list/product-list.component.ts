@@ -96,4 +96,13 @@ export class ProductListComponent implements OnInit {
     console.log(this.products)
   }
 
+  totalProductsCount = this.products.length;
+  totalProductsInStock = this.products.filter(p => p.isAvailable).length;
+  totalProductsOutOfStock = this.products.filter( p => !p.isAvailable).length;
+  
+  selectedRadioButton:string = 'all'
+
+  onFilterChange(value:string){
+    this.selectedRadioButton = value
+  }
 }
