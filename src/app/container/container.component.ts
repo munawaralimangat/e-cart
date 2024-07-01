@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-container',
@@ -21,7 +21,6 @@ export class ContainerComponent implements OnInit {
     return this.product.price - this.product.discountedPrice
   }
   ngOnInit(): void {
-    console.log('component mounted')
   }
 
   increment(){
@@ -33,6 +32,11 @@ export class ContainerComponent implements OnInit {
     if(this.addToCart > 0){
       this.addToCart--
     }
+  }
+  searchText:string = ''
+ 
+  setSearchText(value:string){
+    this.searchText = value
   }
 
 }

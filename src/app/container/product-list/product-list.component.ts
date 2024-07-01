@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'product-list',
@@ -87,13 +87,15 @@ export class ProductListComponent implements OnInit {
       discount:10,
       slug: 'coffee-maker',
       imageUrl: 'https://glenindia.com/cdn/shop/products/1_59f04f79-cb58-4b08-9547-07702fcc49a1_773x773.jpg?v=1672308229'
-    }
+    },
   ];
   
   constructor() { }
 
+    @Input()
+  searchText:string = '';
+
   ngOnInit(): void {
-    console.log(this.products)
   }
 
   totalProductsCount = this.products.length;
@@ -104,5 +106,21 @@ export class ProductListComponent implements OnInit {
 
   onFilterChange(value:string){
     this.selectedRadioButton = value
+  }
+
+  filteredProducts() {
+    if (!this.searchText) {
+      if (this.selectedRadioButton === 'all') {
+        return this.products;
+      }
+      const isAvailable = this.selectedRadioButton === 'true';
+      return this.products.filter(p => p.isAvailable.toString() === this.selectedRadioButton);
+    } else {
+      const lowerCaseSearchText = this.searchText.toLowerCase().trim();
+      return this.products.filter(p =>
+        p.name.toLowerCase().includes(lowerCaseSearchText) ||
+        p.description.toLowerCase().includes(lowerCaseSearchText)
+      );
+    }
   }
 }
