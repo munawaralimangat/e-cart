@@ -10,11 +10,8 @@ export class ProductListComponent implements OnInit {
 
   selectedProduct:Product;
 
-
-  
   onProductClick(product:Product){
     this.selectedProduct = product
-    console.log(this.selectedProduct)
   }
 
   products = [

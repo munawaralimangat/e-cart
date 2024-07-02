@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { ProductComponent } from './product-list/product/product.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @Component({
   selector: 'app-container',
@@ -34,7 +36,9 @@ export class ContainerComponent implements OnInit {
     }
   }
   searchText:string = ''
- 
+
+  @ViewChild(ProductListComponent) productListComponent:ProductListComponent
+
   setSearchText(value:string){
     this.searchText = value
   }
