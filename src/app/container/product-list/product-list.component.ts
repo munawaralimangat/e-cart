@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Product } from 'src/app/Models/Product';
 
 @Component({
   selector: 'product-list',
@@ -6,6 +7,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+
+  selectedProduct:Product;
+
+
+  
+  onProductClick(product:Product){
+    this.selectedProduct = product
+    console.log(this.selectedProduct)
+  }
 
   products = [
     {
