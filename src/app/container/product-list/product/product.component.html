@@ -4,15 +4,16 @@
     <img class="h-48 w-full object-contain" [src]="product.imageUrl" alt="Product Image">
 
     <!-- Available Stock Tag -->
-    <div [ngStyle]="{background: product.isAvailable ? 'green' : 'red'}" class="absolute bottom-2 left-4 text-white px-2 py-1 rounded-md text-xs font-semibold">
+    <div [ngClass]="{'bg-green-700': product.isAvailable,'bg-red-600':!product.isAvailable}" class="absolute bottom-2 left-4 text-white px-2 py-1 rounded-md text-xs font-medium">
       {{ product.isAvailable ? 'In Stock' : 'Not In Stock' }}
     </div>
   </div>
 
   <!-- Discount Tag -->
-  <div *ngIf="product.discount" class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md text-xs font-semibold">
+  <div *ngIf="product.discount" class="absolute top-2 right-2 bg-yellow-400 text-black px-2 py-1 rounded-md text-xs font-bold">
     {{ ((product.discount / product.price) * 100).toFixed(0) }}% OFF
   </div>
+  
 
   <!-- Product Details -->
   <div class="p-6">

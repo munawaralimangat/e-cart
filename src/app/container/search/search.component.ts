@@ -13,8 +13,10 @@ export class SearchComponent implements OnInit {
   }
 
   searchText:string = ''
-  updateText(event:any){
-    this.searchText = event.target.value
+
+  updateSearchText(inputEl:HTMLInputElement){
+    this.searchText = inputEl.value
+    this.searchTextChanged.emit(this.searchText)
   }
 
   @Output()
@@ -25,5 +27,9 @@ export class SearchComponent implements OnInit {
   }
 }
 
+
+/**
+ * 
+ */
 
 //Two way data binding is a combination of property binding and event binding
