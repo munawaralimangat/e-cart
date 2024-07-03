@@ -116,18 +116,22 @@ export class ProductListComponent implements OnInit {
   }
 
   filteredProducts() {
-    if (!this.searchText) {
-      if (this.selectedRadioButton === 'all') {
-        return this.products;
-      }
+    let filtered = this.products;
+  
+    if (this.selectedRadioButton && this.selectedRadioButton !== 'all') {
       const isAvailable = this.selectedRadioButton === 'true';
-      return this.products.filter(p => p.isAvailable.toString() === this.selectedRadioButton);
-    } else {
+      filtered = filtered.filter(p => p.isAvailable === isAvailable);
+    }
+  
+    if (this.searchText) {
       const lowerCaseSearchText = this.searchText.toLowerCase().trim();
-      return this.products.filter(p =>
+      filtered = filtered.filter(p =>
         p.name.toLowerCase().includes(lowerCaseSearchText) ||
         p.description.toLowerCase().includes(lowerCaseSearchText)
       );
     }
+  
+    return filtered;
   }
+  
 }

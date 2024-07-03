@@ -43,4 +43,8 @@ export class ContainerComponent implements OnInit {
     this.searchText = value
   }
 
+  closeModal(){
+    this.productListComponent.selectedProduct = null
+  }
+
 }
