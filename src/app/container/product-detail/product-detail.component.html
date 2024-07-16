@@ -1,4 +1,25 @@
 <div class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-end z-50" *ngIf="product">
+  <div class="w-1/3 p-4 bg-white rounded-lg shadow-lg">
+    <button class="text-red-500 float-right" (click)="onClose()">Close</button>
+    <img class="w-full rounded-lg object-contain" [src]="product.imageUrl" alt="Product Image">
+    <div class="mt-4">
+      <h2 class="text-2xl font-bold mb-2">{{product.name}}</h2>
+      <p class="text-gray-700 text-base mb-4">
+        Description of the product goes here. You can add more details as needed.
+      </p>
+      <p class="text-gray-900 font-semibold text-xl mb-4">$Price</p>
+      <div class="mb-4">
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#Category</span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#AnotherTag</span>
+      </div>
+      <button class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+  </div>
+
+  <!-- <div class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-end z-50" *ngIf="product">
     <div class="bg-white w-full sm:w-1/2 lg:w-1/3 h-full sm:h-full p-6 rounded-l-lg shadow-lg overflow-y-auto">
       <button class="text-red-500 float-right" (click)="onClose()">Close</button>
       <h2 class="text-3xl font-bold mb-4">{{ product.name }}</h2>
@@ -9,21 +30,6 @@
       <p class="text-lg text-gray-600 mb-2">Sizes: {{ product.sizes.join(', ') }}</p>
       <p class="text-lg text-gray-600 mb-4">Colors: {{ product.colors.join(', ') }}</p>
       <p class="text-md text-gray-500 mb-6">{{ product.description }}</p>
-    </div>
-  </div>
-
-  <!-- <div class=" fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-end " >
-    <div class="bg-white w-full h-1/2 sm:w-1/2 p-6 sm:h-full rounded shadow-lg overflow-y-auto">
-      <button class="text-red-500 float-right" >Close</button>
-      <h2 class="text-2xl">PRODYCR</h2>
-      <p>{{product.name}}</p>
-      <p>Price: {{product.price}}</p>
-      <p>Brand: {{product.brand}}</p>
-      <p>Category: {{product.category}}</p>
-      <p>Sizes: {{product.sizes}}</p>
-      <p>Colors: </p>
-      <p></p>
-      <img [src]="product.imageUrl"  class=" w-1/2 object-fill">
     </div>
   </div> -->
   
