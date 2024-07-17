@@ -1,10 +1,40 @@
 <div class="sm:m-14 sm:p-4">
-   <app-search (searchTextChanged)="setSearchText($event)"  ></app-search>
+   <app-search (searchTextChanged)="setSearchText($event)"></app-search>
    <product-list [searchText]="searchText" #productListComponent></product-list>
-</div>
-<product-detail
- *ngIf="productListComponent.selectedProduct"
- [productListComp]="productListComponent"
- (closeModal)="closeModal()"
-></product-detail>
 
+   <product-detail
+       *ngIf="productListComponent.selectedProduct"
+       [productListComp]="productListComponent"
+       (closeModal)="closeModal()">
+   </product-detail>
+
+   <div class="flex container mx-auto py-8 bg-slate-900 p-4 items-center rounded-md">
+       <h2 class="text-2xl font-semibold mb-6 text-white">Latest Arrivals in Popular Brands</h2>
+       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+           <!-- Card 1 -->
+           <div class="bg-white shadow-md rounded-lg p-6">
+               <h3 class="text-xl font-semibold mb-4">Card Title 1</h3>
+               <p class="text-gray-700">This is a description for the first card. It can contain text and other elements.</p>
+               <button class="mt-4 bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">
+                   Learn More
+               </button>
+           </div>
+           <!-- Card 2 -->
+           <div class="bg-white shadow-md rounded-lg p-6">
+               <h3 class="text-xl font-semibold mb-4">Card Title 2</h3>
+               <p class="text-gray-700">This is a description for the second card. It can contain text and other elements.</p>
+               <button class="mt-4 bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">
+                   Learn More
+               </button>
+           </div>
+           <!-- Card 3 -->
+           <div class="bg-white shadow-md rounded-lg p-6">
+               <h3 class="text-xl font-semibold mb-4">Card Title 3</h3>
+               <p class="text-gray-700">This is a description for the third card. It can contain text and other elements.</p>
+               <button class="mt-4 bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">
+                   Learn More
+               </button>
+           </div>
+       </div>
+   </div>
+</div>
