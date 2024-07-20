@@ -14,6 +14,7 @@ import { ProductComponent } from './container/product-list/product/product.compo
 import { FilterComponent } from './container/product-list/filter/filter.component';
 import { ProductDetailComponent } from './container/product-detail/product-detail.component';
 import { FeaturedBrandingComponent } from './container/featured-branding/featured-branding.component';
+import { setBackground } from './customDirectives/setBackground.directive';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FeaturedBrandingComponent } from './container/featured-branding/feature
     FilterComponent,
     ProductDetailComponent,
     FeaturedBrandingComponent,
+    setBackground
   ],
   imports: [
     BrowserModule,
