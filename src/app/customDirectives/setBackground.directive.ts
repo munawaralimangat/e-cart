@@ -1,4 +1,4 @@
-import { Directive, ElementRef, OnInit } from "@angular/core";
+import { Directive, ElementRef, OnInit, Renderer2 } from "@angular/core";
 
 @Directive({
     selector:'[setBackground]'
@@ -6,13 +6,13 @@ import { Directive, ElementRef, OnInit } from "@angular/core";
 
 export class setBackground implements OnInit{
     
-    private element:ElementRef
-    constructor(element:ElementRef){
-        this.element = element
+    constructor(private element:ElementRef,private renderer:Renderer2){
     }
 
     ngOnInit(){
-        this.element.nativeElement.style.backgroundColor = '#C0C0C0'
-        this.element.nativeElement.style.color = 'black'
+        // this.element.nativeElement.style.backgroundColor = '#C0C0C0'
+        // this.element.nativeElement.style.color = 'black'
+        this.renderer.setStyle(this.element.nativeElement,'backgroundColor','#C0C0C0')
+        this.renderer.setStyle(this.element.nativeElement,'color','black')
     }
 }
