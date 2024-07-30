@@ -17,6 +17,7 @@ import { FeaturedBrandingComponent } from './container/featured-branding/feature
 import { setBackground } from './customDirectives/setBackground.directive';
 import { HighlightDirective } from './customDirectives/highlight.directive';
 import { AppHoverDirective } from './customDirectives/app-hover.directive';
+import { DisableProductDirective } from './customDirectives/disable-product.directive';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { AppHoverDirective } from './customDirectives/app-hover.directive';
     FeaturedBrandingComponent,
     setBackground,
     HighlightDirective,
-    AppHoverDirective
+    AppHoverDirective,
+    DisableProductDirective
   ],
   imports: [
     BrowserModule,
